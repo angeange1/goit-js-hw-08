@@ -1,0 +1,39 @@
+ul {
+  list-style-type: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.gallery-image {
+  display: block;
+  width: 360px;
+  height: 200px;
+}
+
+.gallery-image:hover {
+  width: 376px;
+  height: 208px;
+  flex-grow: 1;
+}
+
+.modal {
+  background: #2e2f42cc;
+  width: 1112px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+.modal-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 28px;
+}
