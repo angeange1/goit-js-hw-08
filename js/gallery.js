@@ -85,12 +85,10 @@ gallery.addEventListener("click", handleOpenLightbox)
 
 function handleOpenLightbox(event) {
   event.preventDefault()
-  if (event.target === event.currentTarget) return
-  console.log();
+  if (!event.target.classList.contains("gallery-image")) return
   const currentItem = event.target.closest(".gallery-item")
   const currentImage = currentItem.querySelector(".gallery-image")
   const imageLink = currentImage.dataset.source
-  console.log(imageLink)
   const image = images.find(({ original }) => original === imageLink)
   const instance = basicLightbox.create(`
   <div class="modal"><img class="modal-image" src="${image.original}" alt="${image.description}" />
@@ -98,5 +96,6 @@ function handleOpenLightbox(event) {
   instance.show()
 }
 
-
-
+// Неправильна ініціалізація лайтбоксу у обробнику кліку: Поточний підхід створення нового екземпляру
+//  basicLightbox при кожному кліці по зображенню може бути неефективним та призводити до витоку пам'яті. 
+//  Ідеально вам слід ініціалізувати лайтбокс один раз та оновлювати його вміст за потреби.
