@@ -91,11 +91,16 @@ function handleOpenLightbox(event) {
   const imageLink = currentImage.dataset.source
   const image = images.find(({ original }) => original === imageLink)
   const instance = basicLightbox.create(`
-  <div class="modal"><img class="modal-image" src="${image.original}" alt="${image.description}" />
-  </div>`)
+  <img class="modal-image" src="${image.original}" alt="${image.description}" />`)
   instance.show()
 }
 
 // Неправильна ініціалізація лайтбоксу у обробнику кліку: Поточний підхід створення нового екземпляру
-//  basicLightbox при кожному кліці по зображенню може бути неефективним та призводити до витоку пам'яті. 
+//  basicLightbox при кожному кліці по зображенню може бути неефективним та призводити до витоку пам'яті.
 //  Ідеально вам слід ініціалізувати лайтбокс один раз та оновлювати його вміст за потреби.
+
+ // const instance = basicLightbox.create(`
+  // <div class="modal"><img class="modal-image" src="${image.original}" alt="${image.description}" />
+// </div>`)
+  
+// заберіть будь ласка тут дів який огортає вашу картинку 

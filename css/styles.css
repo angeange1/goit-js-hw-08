@@ -18,11 +18,11 @@ ul {
   height: 200px;
 }
 
-.gallery-image:hover {
+/* .gallery-image:hover {
   width: 376px;
   height: 208px;
   flex-grow: 1;
-}
+} */
 
 .modal {
   background: #2e2f42cc;
